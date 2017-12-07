@@ -2,6 +2,9 @@
 A small framwork for the custom presentation of view controllers
 
 ## Installation
+### Requirements
+* Swift 4
+
 ### Carthage
 Add this line to your `Cartfile`:
 ```
