@@ -7,11 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3646E49B1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E49A1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift */; };
+		3646E49D1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E49C1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift */; };
+		3646E49F1FDA12260013AD55 /* ViewControllerOverlayPlacement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E49E1FDA12260013AD55 /* ViewControllerOverlayPlacement.swift */; };
+		3646E4A11FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E4A01FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift */; };
+		3646E4A31FDA141F0013AD55 /* AsyncTesable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E4A21FDA141F0013AD55 /* AsyncTesable.swift */; };
+		3646E4A51FDA15040013AD55 /* ViewControllerDefaultPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E4A41FDA15040013AD55 /* ViewControllerDefaultPresentationTests.swift */; };
+		365BF2A11FDA0F3C0083FBBB /* ViewControllerTransitionPresentationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365BF2A01FDA0F3C0083FBBB /* ViewControllerTransitionPresentationDelegate.swift */; };
 		36A1F1191FD9E22F00797863 /* ViewControllerPresentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BB65111FD9DFDD00D121A1 /* ViewControllerPresentation.framework */; };
 		36A1F11A1FD9E22F00797863 /* ViewControllerPresentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36BB65111FD9DFDD00D121A1 /* ViewControllerPresentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		36BB65161FD9DFDD00D121A1 /* ViewControllerPresentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BB65141FD9DFDD00D121A1 /* ViewControllerPresentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		36BB651E1FD9E01800D121A1 /* ViewControllerTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB651C1FD9E01800D121A1 /* ViewControllerTransitionPresentationController.swift */; };
-		36BB651F1FD9E01800D121A1 /* ViewControllerTransitionAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB651D1FD9E01800D121A1 /* ViewControllerTransitionAnimationController.swift */; };
+		36BB651E1FD9E01800D121A1 /* ViewControllerDefaultTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB651C1FD9E01800D121A1 /* ViewControllerDefaultTransitionPresentationController.swift */; };
+		36BB651F1FD9E01800D121A1 /* ViewControllerDefaultTransitionAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB651D1FD9E01800D121A1 /* ViewControllerDefaultTransitionAnimationController.swift */; };
 		36BB65271FD9E04C00D121A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB65261FD9E04C00D121A1 /* AppDelegate.swift */; };
 		36BB65291FD9E04C00D121A1 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB65281FD9E04C00D121A1 /* RootViewController.swift */; };
 		36BB652C1FD9E04C00D121A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BB652A1FD9E04C00D121A1 /* Main.storyboard */; };
@@ -53,11 +60,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3646E49A1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayTransitionAnimationController.swift; sourceTree = "<group>"; };
+		3646E49C1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayTransitionPresentationController.swift; sourceTree = "<group>"; };
+		3646E49E1FDA12260013AD55 /* ViewControllerOverlayPlacement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayPlacement.swift; sourceTree = "<group>"; };
+		3646E4A01FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayPresentationTests.swift; sourceTree = "<group>"; };
+		3646E4A21FDA141F0013AD55 /* AsyncTesable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTesable.swift; sourceTree = "<group>"; };
+		3646E4A41FDA15040013AD55 /* ViewControllerDefaultPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDefaultPresentationTests.swift; sourceTree = "<group>"; };
+		365BF2A01FDA0F3C0083FBBB /* ViewControllerTransitionPresentationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionPresentationDelegate.swift; sourceTree = "<group>"; };
 		36BB65111FD9DFDD00D121A1 /* ViewControllerPresentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewControllerPresentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BB65141FD9DFDD00D121A1 /* ViewControllerPresentation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewControllerPresentation.h; sourceTree = "<group>"; };
 		36BB65151FD9DFDD00D121A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36BB651C1FD9E01800D121A1 /* ViewControllerTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionPresentationController.swift; sourceTree = "<group>"; };
-		36BB651D1FD9E01800D121A1 /* ViewControllerTransitionAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTransitionAnimationController.swift; sourceTree = "<group>"; };
+		36BB651C1FD9E01800D121A1 /* ViewControllerDefaultTransitionPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDefaultTransitionPresentationController.swift; sourceTree = "<group>"; };
+		36BB651D1FD9E01800D121A1 /* ViewControllerDefaultTransitionAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerDefaultTransitionAnimationController.swift; sourceTree = "<group>"; };
 		36BB65241FD9E04B00D121A1 /* ViewControllerPresentationApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ViewControllerPresentationApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BB65261FD9E04C00D121A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36BB65281FD9E04C00D121A1 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -120,8 +134,12 @@
 		36BB65131FD9DFDD00D121A1 /* ViewControllerPresentation */ = {
 			isa = PBXGroup;
 			children = (
-				36BB651D1FD9E01800D121A1 /* ViewControllerTransitionAnimationController.swift */,
-				36BB651C1FD9E01800D121A1 /* ViewControllerTransitionPresentationController.swift */,
+				365BF2A01FDA0F3C0083FBBB /* ViewControllerTransitionPresentationDelegate.swift */,
+				36BB651D1FD9E01800D121A1 /* ViewControllerDefaultTransitionAnimationController.swift */,
+				36BB651C1FD9E01800D121A1 /* ViewControllerDefaultTransitionPresentationController.swift */,
+				3646E49A1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift */,
+				3646E49C1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift */,
+				3646E49E1FDA12260013AD55 /* ViewControllerOverlayPlacement.swift */,
 				36BB65141FD9DFDD00D121A1 /* ViewControllerPresentation.h */,
 				36BB65151FD9DFDD00D121A1 /* Info.plist */,
 			);
@@ -145,8 +163,11 @@
 		36BB653A1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests */ = {
 			isa = PBXGroup;
 			children = (
+				3646E4A41FDA15040013AD55 /* ViewControllerDefaultPresentationTests.swift */,
 				36BB653B1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift */,
+				3646E4A01FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift */,
 				36BB653D1FD9E04C00D121A1 /* Info.plist */,
+				3646E4A21FDA141F0013AD55 /* AsyncTesable.swift */,
 			);
 			path = ViewControllerPresentationApplicationTests;
 			sourceTree = "<group>";
@@ -298,8 +319,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36BB651F1FD9E01800D121A1 /* ViewControllerTransitionAnimationController.swift in Sources */,
-				36BB651E1FD9E01800D121A1 /* ViewControllerTransitionPresentationController.swift in Sources */,
+				365BF2A11FDA0F3C0083FBBB /* ViewControllerTransitionPresentationDelegate.swift in Sources */,
+				36BB651F1FD9E01800D121A1 /* ViewControllerDefaultTransitionAnimationController.swift in Sources */,
+				36BB651E1FD9E01800D121A1 /* ViewControllerDefaultTransitionPresentationController.swift in Sources */,
+				3646E49F1FDA12260013AD55 /* ViewControllerOverlayPlacement.swift in Sources */,
+				3646E49D1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift in Sources */,
+				3646E49B1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +343,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BB653C1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift in Sources */,
+				3646E4A11FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift in Sources */,
+				3646E4A51FDA15040013AD55 /* ViewControllerDefaultPresentationTests.swift in Sources */,
+				3646E4A31FDA141F0013AD55 /* AsyncTesable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

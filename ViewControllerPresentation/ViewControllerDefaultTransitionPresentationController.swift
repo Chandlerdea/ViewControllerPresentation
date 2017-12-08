@@ -7,11 +7,7 @@
 
 import UIKit
 
-public protocol ViewControllerTransitionPresentationDelegate: class {
-    func didTapContainer()
-}
-
-final class ViewControllerTransitionPresentationController: UIPresentationController {
+class ViewControllerDefaultTransitionPresentationController: UIPresentationController {
 
     // MARK: - Properties
 

@@ -7,20 +7,17 @@
 //
 
 import XCTest
+import ViewControllerPresentation
 @testable import ViewControllerPresentationApplication
 
-class ViewControllerPresentationApplicationTests: XCTestCase {
-    
-    var expectation: XCTestExpectation!
-    var rootViewController: RootViewController!
+class ViewControllerPresentationApplicationTests: ViewControllerDefaultPresentationTests {
     
     override func setUp() {
         super.setUp()
-        self.rootViewController = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController as! RootViewController
+        self.rootViewController.transitionController = ViewControllerDefaultTransitionAnimationController()
     }
     
     func testThatNewViewControllerCanBePresented() {
-        self.expectation = self.expectation(description: "show new view controller")
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             if let presentedViewController: UIViewController = self?.rootViewController.presentedViewController {
                 XCTAssertTrue(presentedViewController is PresentedViewController)
@@ -29,15 +26,10 @@ class ViewControllerPresentationApplicationTests: XCTestCase {
             }
             self?.expectation.fulfill()
         }
-        self.waitForExpectations(timeout: 5) { (error) in
-            if let error = error {
-                XCTFail(error.localizedDescription)
-            }
-        }
+        self.wait()
     }
     
     func testThatNewViewControllerIsCorrectSize() {
-        self.expectation = self.expectation(description: "test view controller size")
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             if let presentedViewController: UIViewController = self?.rootViewController.presentedViewController {
                 let expectedSize: CGSize = CGSize(width: PresentedViewController.defaultWidth, height: PresentedViewController.defaultHeight)
@@ -47,15 +39,10 @@ class ViewControllerPresentationApplicationTests: XCTestCase {
             }
             self?.expectation.fulfill()
         }
-        self.waitForExpectations(timeout: 5) { (error) in
-            if let error = error {
-                XCTFail(error.localizedDescription)
-            }
-        }
+        self.wait()
     }
     
     func testThatNewViewControllerCanBeDismissed() {
-        self.expectation = self.expectation(description: "dismiss view controller")
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             self?.rootViewController.didTapContainer()
             // The dismissal is animated, so force a wait
@@ -64,10 +51,6 @@ class ViewControllerPresentationApplicationTests: XCTestCase {
                 self?.expectation.fulfill()
             })
         }
-        self.waitForExpectations(timeout: 5) { (error) in
-            if let error = error {
-                XCTFail(error.localizedDescription)
-            }
-        }
+        self.wait()
     }
 }

@@ -11,12 +11,12 @@ import ViewControllerPresentation
 
 class RootViewController: UIViewController, ViewControllerTransitionPresentationDelegate {
 
-    let transitionController: ViewControlllerTransitionAnimationController = ViewControlllerTransitionAnimationController()
+    var transitionController: ViewControllerDefaultTransitionAnimationController?
     
     override public func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
-        self.transitionController.tapDelegate = self
+        self.transitionController?.tapDelegate = self
         let recognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap(_:)))
         self.view.addGestureRecognizer(recognizer)
     }

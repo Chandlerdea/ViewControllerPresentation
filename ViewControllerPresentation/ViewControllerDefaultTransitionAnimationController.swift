@@ -7,7 +7,7 @@
 
 import UIKit
 
-public final class ViewControlllerTransitionAnimationController: NSObject, UIViewControllerTransitioningDelegate {
+public class ViewControllerDefaultTransitionAnimationController: NSObject, UIViewControllerTransitioningDelegate {
 
     // MARK: - Properties
 
@@ -16,7 +16,7 @@ public final class ViewControlllerTransitionAnimationController: NSObject, UIVie
     // MARK: UIViewControllerTransitioningDelegate
 
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let result: ViewControllerTransitionPresentationController = ViewControllerTransitionPresentationController(presentedViewController: presented, presenting: presenting)
+        let result: ViewControllerDefaultTransitionPresentationController = ViewControllerDefaultTransitionPresentationController(presentedViewController: presented, presenting: presenting)
         result.tapDelegate = self.tapDelegate
         return result
     }
