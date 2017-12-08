@@ -18,7 +18,6 @@ class ViewControllerDefaultPresentationTests: XCTestCase {
     override func setUp() {
         super.setUp()
         self.rootViewController = (UIApplication.shared.delegate as? AppDelegate)?.window?.rootViewController as! RootViewController
-        self.expectation = self.makeExpectation()
     }
     
 }

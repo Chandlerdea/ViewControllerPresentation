@@ -12,20 +12,28 @@ public final class ViewControllerOverlayTransitionAnimationController: ViewContr
     
     // MARK: - Properties
     
-    private let placement: ViewControllerOverlayPlacement
+    private let overlay: ViewControllerOverlay
     
     // MARK: - Init
     
-    public init(placement: ViewControllerOverlayPlacement) {
-        self.placement = placement
+    public init(overlay: ViewControllerOverlay) {
+        self.overlay = overlay
         super.init()
     }
     
     // MARK: UIViewControllerTransitioningDelegate
     
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ViewControllerOverlayAnimator(overlay: self.overlay, isPresenting: true)
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return ViewControllerOverlayAnimator(overlay: self.overlay, isPresenting: false)
+    }
+    
     public override func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let result: ViewControllerOverlayTransitionPresentationController = ViewControllerOverlayTransitionPresentationController(
-            placement: self.placement,
+            overlay: self.overlay,
             presentedViewController: presented,
             presenting: presenting
         )

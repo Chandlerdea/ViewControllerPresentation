@@ -18,6 +18,7 @@ class ViewControllerPresentationApplicationTests: ViewControllerDefaultPresentat
     }
     
     func testThatNewViewControllerCanBePresented() {
+        self.expectation = self.makeExpectation()
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             if let presentedViewController: UIViewController = self?.rootViewController.presentedViewController {
                 XCTAssertTrue(presentedViewController is PresentedViewController)
@@ -30,6 +31,7 @@ class ViewControllerPresentationApplicationTests: ViewControllerDefaultPresentat
     }
     
     func testThatNewViewControllerIsCorrectSize() {
+        self.expectation = self.makeExpectation()
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             if let presentedViewController: UIViewController = self?.rootViewController.presentedViewController {
                 let expectedSize: CGSize = CGSize(width: PresentedViewController.defaultWidth, height: PresentedViewController.defaultHeight)
@@ -43,6 +45,7 @@ class ViewControllerPresentationApplicationTests: ViewControllerDefaultPresentat
     }
     
     func testThatNewViewControllerCanBeDismissed() {
+        self.expectation = self.makeExpectation()
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             self?.rootViewController.didTapContainer()
             // The dismissal is animated, so force a wait

@@ -12,26 +12,35 @@ final class ViewControllerOverlayTransitionPresentationController: ViewControlle
     
     // MARK: - Properties
     
-    let placement: ViewControllerOverlayPlacement
+    private let overlay: ViewControllerOverlay
     
     override var frameOfPresentedViewInContainerView: CGRect {
         let containerSize: CGSize = self.containerView?.bounds.size ?? UIScreen.main.bounds.size
         var frame: CGRect = super.frameOfPresentedViewInContainerView
-        switch self.placement {
+        switch self.overlay.position {
         case .top(let padding):
             frame.origin.y = padding
+            frame.origin.x = (containerSize.width * 0.5) - (frame.width * 0.5)
+        case .left(let padding):
+            frame.origin.x = padding
+            frame.origin.y = (containerSize.height * 0.5) - (frame.height * 0.5)
         case .center:
             frame.origin.y = (containerSize.height * 0.5) - (frame.width * 0.5)
+            frame.origin.x = (containerSize.width * 0.5) - (frame.width * 0.5)
+        case .right(let padding):
+            frame.origin.x = containerSize.width - frame.width - padding
+            frame.origin.y = (containerSize.height * 0.5) - (frame.height * 0.5)
         case .bottom(let padding):
             frame.origin.y = containerSize.height - frame.height - padding
+            frame.origin.x = (containerSize.width * 0.5) - (frame.width * 0.5)
         }
         return frame
     }
     
     // MARK: - Init
     
-    init(placement: ViewControllerOverlayPlacement, presentedViewController: UIViewController, presenting: UIViewController?) {
-        self.placement = placement
+    init(overlay: ViewControllerOverlay, presentedViewController: UIViewController, presenting: UIViewController?) {
+        self.overlay = overlay
         super.init(presentedViewController: presentedViewController, presenting: presenting)
     }
 }
