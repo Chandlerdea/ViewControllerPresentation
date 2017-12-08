@@ -27,102 +27,69 @@ public final class ViewControllerOverlayAnimator: NSObject {
     public func frames(for containerView: UIView, viewFrame: CGRect) -> (initial: CGRect, final: CGRect) {
         var initialFrame: CGRect = viewFrame
         var finalFrame: CGRect = viewFrame
-        switch (self.overlay.entry, self.overlay.position) {
-        // top entry
-        case (.top, .top(let padding)):
-            if self.isPresenting {
+        
+        if self.isPresenting {
+            switch (self.overlay.entry, self.overlay.position) {
+            // top entry
+            case (.top, .top(let padding)):
                 initialFrame.origin.y = -initialFrame.height
                 finalFrame.origin.y = padding
-            } else {
-                finalFrame.origin.y = -initialFrame.height
-            }
-        case (.top, .center):
-            if self.isPresenting {
+            case (.top, .center):
                 initialFrame.origin.y = -initialFrame.height
                 finalFrame.origin.y = (containerView.bounds.height * 0.5) - (initialFrame.height * 0.5)
-            } else {
-                finalFrame.origin.y = -initialFrame.height
-            }
-        case (.top, .bottom(let padding)):
-            if self.isPresenting {
+            case (.top, .bottom(let padding)):
                 initialFrame.origin.y = -initialFrame.height
                 finalFrame.origin.y = containerView.bounds.height - initialFrame.height - padding
-            } else {
-                finalFrame.origin.y = -initialFrame.height
-            }
-            
-        // left entry
-        case (.left, .left(let padding)):
-            if self.isPresenting {
+                
+            // left entry
+            case (.left, .left(let padding)):
                 initialFrame.origin.x = -initialFrame.width
                 finalFrame.origin.x = padding
-            } else {
-                initialFrame.origin.x = -initialFrame.width
-            }
-        case (.left, .center):
-            if self.isPresenting {
+            case (.left, .center):
                 initialFrame.origin.x = -initialFrame.width
                 finalFrame.origin.x = (containerView.bounds.width * 0.5) - (initialFrame.width * 0.5)
-            } else {
-                initialFrame.origin.x = -initialFrame.width
-            }
-        case (.left, .right(let padding)):
-            if self.isPresenting {
+            case (.left, .right(let padding)):
                 initialFrame.origin.x = -initialFrame.width
                 finalFrame.origin.x = containerView.bounds.width - initialFrame.width - padding
-            } else {
-                initialFrame.origin.x = -initialFrame.width
-            }
-            
-        // bottom entry
-        case (.bottom, .top(let padding)):
-            if self.isPresenting {
+                
+            // bottom entry
+            case (.bottom, .top(let padding)):
                 initialFrame.origin.y = containerView.bounds.height
                 finalFrame.origin.y = padding
-            } else {
-                finalFrame.origin.y = containerView.bounds.height
-            }
-        case (.bottom, .center):
-            if self.isPresenting {
+            case (.bottom, .center):
                 initialFrame.origin.y = containerView.bounds.height
                 finalFrame.origin.y = (containerView.bounds.height * 0.5) - (initialFrame.height * 0.5)
-            } else {
-                finalFrame.origin.y = containerView.bounds.height
-            }
-        case (.bottom, .bottom(let padding)):
-            if self.isPresenting {
+            case (.bottom, .bottom(let padding)):
                 initialFrame.origin.y = containerView.bounds.height
                 finalFrame.origin.y = containerView.bounds.height - initialFrame.height - padding
-            } else {
-                finalFrame.origin.y = containerView.bounds.height
-            }
-            
-        // right entry
-        case (.right, .left(let padding)):
-            if self.isPresenting {
+                
+            // right entry
+            case (.right, .left(let padding)):
                 initialFrame.origin.x = containerView.bounds.width
                 finalFrame.origin.x = padding
-            } else {
-                initialFrame.origin.x = containerView.bounds.width
-            }
-        case (.right, .center):
-            if self.isPresenting {
+            case (.right, .center):
                 initialFrame.origin.x = containerView.bounds.width
                 finalFrame.origin.x = (containerView.bounds.width * 0.5) - (initialFrame.width * 0.5)
-            } else {
-                initialFrame.origin.x = containerView.bounds.width
-            }
-        case (.right, .right(let padding)):
-            if self.isPresenting {
+            case (.right, .right(let padding)):
                 initialFrame.origin.x = containerView.bounds.width
                 finalFrame.origin.x = containerView.bounds.width - initialFrame.width - padding
-            } else {
-                initialFrame.origin.x = containerView.bounds.width
+                
+            default:
+                return (.zero, .zero)
             }
-            
-        default:
-            return (.zero, .zero)
+        } else {
+            switch self.overlay.exit {
+            case .top:
+                finalFrame.origin.y = -initialFrame.height
+            case .left:
+                finalFrame.origin.x = -initialFrame.width
+            case .bottom:
+                finalFrame.origin.y = containerView.bounds.height
+            case .right:
+                finalFrame.origin.x = containerView.bounds.width
+            }
         }
+
         return (initialFrame, finalFrame)
     }
 
@@ -131,7 +98,7 @@ public final class ViewControllerOverlayAnimator: NSObject {
 extension ViewControllerOverlayAnimator: UIViewControllerAnimatedTransitioning {
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.3
+        return 0.35
     }
     
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

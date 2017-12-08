@@ -48,7 +48,7 @@ class ViewControllerOverlayPresentationTests: ViewControllerDefaultPresentationT
     func testThatTopPositionOverlayHasCorrectFrame() {
         do {
             self.expectation = self.makeExpectation()
-            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .top, position: .top(self.padding))
+            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .top, exit: .top, position: .top(self.padding))
             let expectedOrigin: CGPoint = self.expectedOrigin(for: overlay.position)
             self.showPresentedViewController(with: overlay, expectedOrigin: expectedOrigin)
             self.wait()
@@ -60,7 +60,7 @@ class ViewControllerOverlayPresentationTests: ViewControllerDefaultPresentationT
     func testThatLeftPositionOverlayHasCorrectFrame() {
         do {
             self.expectation = self.makeExpectation()
-            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .left, position: .left(self.padding))
+            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .left, exit: .left, position: .left(self.padding))
             let expectedOrigin: CGPoint = self.expectedOrigin(for: overlay.position)
             self.showPresentedViewController(with: overlay, expectedOrigin: expectedOrigin)
             self.wait()
@@ -72,7 +72,7 @@ class ViewControllerOverlayPresentationTests: ViewControllerDefaultPresentationT
     func testThatCenterPositionOverlayHasCorrectFrame() {
         do {
             self.expectation = self.makeExpectation()
-            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .top, position: .center)
+            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .top, exit: .top, position: .center)
             let expectedOrigin: CGPoint = self.expectedOrigin(for: overlay.position)
             self.showPresentedViewController(with: overlay, expectedOrigin: expectedOrigin)
             self.wait()
@@ -84,7 +84,7 @@ class ViewControllerOverlayPresentationTests: ViewControllerDefaultPresentationT
     func testThatBottomPositionOverlayHasCorrectFrame() {
         do {
             self.expectation = self.makeExpectation()
-            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .bottom, position: .bottom(20))
+            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .bottom, exit: .bottom, position: .bottom(20))
             let expectedOrigin: CGPoint = self.expectedOrigin(for: overlay.position)
             self.showPresentedViewController(with: overlay, expectedOrigin: expectedOrigin)
             self.wait()
@@ -96,7 +96,7 @@ class ViewControllerOverlayPresentationTests: ViewControllerDefaultPresentationT
     func testThatRightPositionOverlayHasCorrectFrame() {
         do {
             self.expectation = self.makeExpectation()
-            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .right, position: .right(20))
+            let overlay: ViewControllerOverlay = try ViewControllerOverlay(entry: .right, exit: .right, position: .right(20))
             let expectedOrigin: CGPoint = self.expectedOrigin(for: overlay.position)
             self.showPresentedViewController(with: overlay, expectedOrigin: expectedOrigin)
             self.wait()

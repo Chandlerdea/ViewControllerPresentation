@@ -17,7 +17,47 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iOJ-3T-Tql">
+                                <rect key="frame" x="116" y="617" width="142" height="30"/>
+                                <state key="normal" title="present from bottom"/>
+                                <connections>
+                                    <action selector="bottomButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CqW-2n-TWj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xp1-XH-kQW">
+                                <rect key="frame" x="130" y="20" width="115" height="30"/>
+                                <state key="normal" title="present from top"/>
+                                <connections>
+                                    <action selector="topButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9hU-4w-xdd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0bq-Fo-j2y">
+                                <rect key="frame" x="16" y="318" width="115" height="30"/>
+                                <state key="normal" title="present from left"/>
+                                <connections>
+                                    <action selector="leftButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e19-vM-ZuC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZO-bf-OHs">
+                                <rect key="frame" x="235" y="318" width="124" height="30"/>
+                                <state key="normal" title="present from right"/>
+                                <connections>
+                                    <action selector="rightButtonSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7n9-mT-Lgc"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0bq-Fo-j2y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="9a1-vA-juI"/>
+                            <constraint firstItem="xp1-XH-kQW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cuj-Dt-WVW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hZO-bf-OHs" secondAttribute="trailing" constant="16" id="fyq-fd-jpo"/>
+                            <constraint firstItem="hZO-bf-OHs" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jTz-Uy-Pfe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iOJ-3T-Tql" secondAttribute="bottom" constant="20" id="pEa-cn-Cd7"/>
+                            <constraint firstItem="iOJ-3T-Tql" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pFO-6s-HRd"/>
+                            <constraint firstItem="0bq-Fo-j2y" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="pI7-TO-cFs"/>
+                            <constraint firstItem="xp1-XH-kQW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="sb5-Xa-Q1x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
