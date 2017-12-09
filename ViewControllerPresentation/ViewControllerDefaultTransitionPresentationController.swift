@@ -34,9 +34,9 @@ class ViewControllerDefaultTransitionPresentationController: UIPresentationContr
 
     // MARK: - Init
 
-    override init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
+    init(backgroundColor: UIColor, presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
         self.dimmingView = UIView(frame: .zero)
-        self.dimmingView.backgroundColor = UIColor(white: 0, alpha: 0.2)
+        self.dimmingView.backgroundColor = backgroundColor
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
         let tapRecognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapRecognized(_:)))
         self.dimmingView.addGestureRecognizer(tapRecognizer)

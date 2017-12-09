@@ -34,6 +34,7 @@ public final class ViewControllerOverlayTransitionAnimationController: ViewContr
     public override func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         let result: ViewControllerOverlayTransitionPresentationController = ViewControllerOverlayTransitionPresentationController(
             overlay: self.overlay,
+            backgroundColor: self.backgroundColor,
             presentedViewController: presented,
             presenting: presenting
         )

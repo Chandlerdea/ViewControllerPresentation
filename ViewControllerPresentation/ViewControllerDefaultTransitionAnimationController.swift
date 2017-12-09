@@ -12,11 +12,16 @@ public class ViewControllerDefaultTransitionAnimationController: NSObject, UIVie
     // MARK: - Properties
 
     public weak var tapDelegate: ViewControllerTransitionPresentationDelegate?
+    public var backgroundColor: UIColor = UIColor.black.withAlphaComponent(0.2)
 
     // MARK: UIViewControllerTransitioningDelegate
 
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        let result: ViewControllerDefaultTransitionPresentationController = ViewControllerDefaultTransitionPresentationController(presentedViewController: presented, presenting: presenting)
+        let result: ViewControllerDefaultTransitionPresentationController = ViewControllerDefaultTransitionPresentationController(
+            backgroundColor: self.backgroundColor,
+            presentedViewController: presented,
+            presenting: presenting
+        )
         result.tapDelegate = self.tapDelegate
         return result
     }
