@@ -98,7 +98,7 @@ public final class ViewControllerOverlayAnimator: NSObject {
 extension ViewControllerOverlayAnimator: UIViewControllerAnimatedTransitioning {
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.35
+        return 0.3
     }
     
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
