@@ -34,7 +34,7 @@ The default animation is modal, from bottom to top. The presented view controlle
 `ViewControllerOverlayPlacement` defines 3 different positions: top, center, and bottom. Both top and bottom have an associated value, which is used for padding. To use this animation, you use a `ViewControllerOverlayTransitionAnimationController`, which takes a `ViewControllerOverlayPlacement` in the initializer.
 
 Using the framework is very easy. 
-```
+```swift
 let vc: UIViewController = .....
 vc.modalPresentationStyle = .custom
 vc.transitioningDelegate = self.animationController // We need a strong reference to this property 
