@@ -35,6 +35,7 @@ public final class ViewControllerOverlayTransitionAnimationController: ViewContr
         let result: ViewControllerOverlayTransitionPresentationController = ViewControllerOverlayTransitionPresentationController(
             overlay: self.overlay,
             backgroundColor: self.backgroundColor,
+            backgroundView: self.customBackgroundView,
             presentedViewController: presented,
             presenting: presenting
         )
