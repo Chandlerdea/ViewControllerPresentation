@@ -39,11 +39,9 @@ final class ViewControllerOverlayTransitionPresentationController: ViewControlle
     
     // MARK: - Init
     
-    init(overlay: ViewControllerOverlay, backgroundColor: UIColor?, backgroundView: UIView?, presentedViewController: UIViewController, presenting: UIViewController?) {
+    init(overlay: ViewControllerOverlay, presentedViewController: UIViewController & ViewControllerPresentable, presenting: UIViewController?) {
         self.overlay = overlay
         super.init(
-            backgroundColor: backgroundColor,
-            backgroundView: backgroundView,
             presentedViewController: presentedViewController,
             presenting: presenting
         )

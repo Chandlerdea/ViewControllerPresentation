@@ -37,12 +37,12 @@ class ViewControllerDefaultTransitionPresentationController: UIPresentationContr
 
     // MARK: - Init
 
-    init(backgroundColor: UIColor?, backgroundView: UIView?, presentedViewController: UIViewController, presenting presentingViewController: UIViewController?) {
-        if let backgroundColor: UIColor = backgroundColor {
+    init(presentedViewController: UIViewController & ViewControllerPresentable, presenting presentingViewController: UIViewController?) {
+        if let backgroundColor: UIColor = presentedViewController.backgroundColor {
             let dimmingView = UIView(frame: .zero)
             dimmingView.backgroundColor = backgroundColor
             self.backgroundView = dimmingView
-        } else if let backgroundView: UIView = backgroundView {
+        } else if let backgroundView: UIView = presentedViewController.customBackgroundView {
             self.backgroundView = backgroundView
         } else {
             fatalError("either backgroundColor or backgroundView must not be nil")

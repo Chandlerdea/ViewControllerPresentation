@@ -9,13 +9,15 @@
 import UIKit
 import ViewControllerPresentation
 
-class RootViewController: UIViewController, ViewControllerTransitionPresentationDelegate {
+class RootViewController: UIViewController {
 
     var transitionController: ViewControllerDefaultTransitionAnimationController? {
         didSet {
             self.transitionController?.tapDelegate = self
         }
     }
+    
+    var peekTransitionController: UIViewControllerTransitioningDelegate = ViewControllerPeekTransitionAnimationController()
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -31,15 +33,22 @@ class RootViewController: UIViewController, ViewControllerTransitionPresentation
         self.present(vc, animated: animated, completion: completion)
     }
     
+    public func peekNewViewController(animated: Bool, completion: (() -> ())? = nil) {
+        let vc = PeekViewController()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = self.peekTransitionController
+        self.present(vc, animated: animated, completion: completion)
+    }
+    
     @objc func didTap(_ sender: UITapGestureRecognizer) {
-        self.presentNewViewController(animated: true)
+        self.peekNewViewController(animated: true)
     }
     
     public func didTapContainer() {
         self.presentedViewController?.dismiss(animated: true, completion: .none)
     }
     
-    private func present(with entry: ViewControllerOverlay.Edge) {
+    private func presentOverlay(with entry: ViewControllerOverlay.Edge) {
         let exit: ViewControllerOverlay.Edge
         let position: ViewControllerOverlay.Position
         switch entry {
@@ -62,19 +71,19 @@ class RootViewController: UIViewController, ViewControllerTransitionPresentation
     }
     
     @IBAction func topButtonSelected(_ sender: UIButton) {
-        self.present(with: .top)
+        self.presentOverlay(with: .top)
     }
     
     @IBAction func leftButtonSelected(_ sender: UIButton) {
-        self.present(with: .left)
+        self.presentOverlay(with: .left)
     }
     
     @IBAction func bottomButtonSelected(_ sender: UIButton) {
-        self.present(with: .bottom)
+        self.presentOverlay(with: .bottom)
     }
     
     @IBAction func rightButtonSelected(_ sender: UIButton) {
-        self.present(with: .right)
+        self.presentOverlay(with: .right)
     }
 
 }
