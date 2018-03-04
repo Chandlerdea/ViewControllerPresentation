@@ -66,7 +66,7 @@ private extension ViewControllerPeekAnimator {
 extension ViewControllerPeekAnimator: UIViewControllerAnimatedTransitioning {
     
     public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 2
+        return 0.3
     }
     
     public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
