@@ -15,14 +15,3 @@ public protocol ViewControllerPresentable {
     var backgroundColor: UIColor? { get }
 }
 
-extension UIViewController: ViewControllerPresentable {
-    
-    public var customBackgroundView: UIView? {
-        return .none
-    }
-    
-    public var backgroundColor: UIColor? {
-        return UIColor.black.withAlphaComponent(0.2)
-    }
-
-}

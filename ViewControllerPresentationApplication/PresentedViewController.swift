@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import ViewControllerPresentation
 
-class PresentedViewController: UIViewController {
-    
-    static let defaultWidth: CGFloat = 200
-    static let defaultHeight: CGFloat = 200
+class PresentedViewController: UIViewController, ViewControllerPresentable {
 
     public override var preferredContentSize: CGSize {
         get {
-            return CGSize(width: type(of: self).defaultWidth, height: type(of: self).defaultHeight)
+            return CGSize(width: 200, height: 200)
         }
         set {}
+    }
+    
+    var customBackgroundView: UIView? {
+        return .none
+    }
+    
+    var backgroundColor: UIColor? {
+        return UIColor.black.withAlphaComponent(0.2)
     }
     
     public override func viewDidLoad() {

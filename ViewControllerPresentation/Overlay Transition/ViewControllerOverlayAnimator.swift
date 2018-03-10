@@ -106,12 +106,12 @@ extension ViewControllerOverlayAnimator: UIViewControllerAnimatedTransitioning {
         let containerView: UIView = transitionContext.containerView
         if self.isPresenting {
             viewController = transitionContext.viewController(forKey: .to)!
-            transitionContext.containerView.addSubview(viewController.view)
+            containerView.addSubview(viewController.view)
         } else {
             viewController = transitionContext.viewController(forKey: .from)!
         }
-        let initialFrame: CGRect = transitionContext.finalFrame(for: viewController)
-        let frames: (initial: CGRect, final: CGRect) = self.frames(for: containerView, viewFrame: initialFrame)
+        let finalFrame: CGRect = transitionContext.finalFrame(for: viewController)
+        let frames: (initial: CGRect, final: CGRect) = self.frames(for: containerView, viewFrame: finalFrame)
         let animationDuration: TimeInterval = transitionDuration(using: transitionContext)
         viewController.view.frame = frames.initial
         UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseInOut, animations: {

@@ -16,8 +16,11 @@ public class ViewControllerDefaultTransitionAnimationController: NSObject, UIVie
     // MARK: UIViewControllerTransitioningDelegate
 
     public func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        guard let presentable: ViewControllerPresentable & UIViewController = presented as? (UIViewController & ViewControllerPresentable) else {
+            return .none
+        }
         let result: ViewControllerDefaultTransitionPresentationController = ViewControllerDefaultTransitionPresentationController(
-            presentedViewController: presented,
+            presentedViewController: presentable,
             presenting: presenting
         )
         result.tapDelegate = self.tapDelegate

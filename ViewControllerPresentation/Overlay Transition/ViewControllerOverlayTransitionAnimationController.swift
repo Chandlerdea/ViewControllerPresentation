@@ -32,9 +32,12 @@ public final class ViewControllerOverlayTransitionAnimationController: ViewContr
     }
     
     public override func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        guard let presentable: ViewControllerPresentable & UIViewController = presented as? (UIViewController & ViewControllerPresentable) else {
+            return .none
+        }
         let result: ViewControllerOverlayTransitionPresentationController = ViewControllerOverlayTransitionPresentationController(
             overlay: self.overlay,
-            presentedViewController: presented,
+            presentedViewController: presentable,
             presenting: presenting
         )
         result.tapDelegate = self.tapDelegate

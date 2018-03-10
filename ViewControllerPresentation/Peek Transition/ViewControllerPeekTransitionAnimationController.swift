@@ -21,8 +21,11 @@ public final class ViewControllerPeekTransitionAnimationController: ViewControll
     }
     
     public override func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        guard let presentable: ViewControllerPresentable & UIViewController = presented as? (UIViewController & ViewControllerPresentable) else {
+            return .none
+        }
         return ViewControllerPeekTransitionPresentationController(
-            presentedViewController: presented,
+            presentedViewController: presentable,
             presenting: presenting
         )
     }
