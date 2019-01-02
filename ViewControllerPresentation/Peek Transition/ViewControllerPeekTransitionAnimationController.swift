@@ -17,16 +17,33 @@ public final class ViewControllerPeekTransitionAnimationController: ViewControll
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return ViewControllerPeekAnimator(isPresenting: false)
+        if let interactiveDismissal: ViewControllerModalInteractiveDismissable = dismissed as? ViewControllerModalInteractiveDismissable {
+            return ViewControllerPeekAnimator(
+                isPresenting: false,
+                interactiveDismissalController: interactiveDismissal.interactiveTransitioning
+            )
+        } else {
+            return ViewControllerPeekAnimator(isPresenting: false)
+        }
     }
     
     public override func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        guard let presentable: ViewControllerPresentable & UIViewController = presented as? (UIViewController & ViewControllerPresentable) else {
+        guard let presentable: UIViewController & ViewControllerPresentable = presented as? (UIViewController & ViewControllerPresentable) else {
             return .none
         }
         return ViewControllerPeekTransitionPresentationController(
             presentedViewController: presentable,
             presenting: presenting
         )
+    }
+    
+    public func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if let peekAnimator: ViewControllerPeekAnimator = animator as? ViewControllerPeekAnimator,
+            let interactiveDismissale: ViewControllerModalInteractiveDismissalController = peekAnimator.interactiveDismissalController,
+            interactiveDismissale.interactionInProgress {
+            return interactiveDismissale
+        } else {
+            return .none
+        }
     }
 }
