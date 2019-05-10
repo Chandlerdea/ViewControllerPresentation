@@ -42,6 +42,18 @@ self.present(vc, animated: true, completion: nil)
 ```
 And that's it!
 
+#### Peek Animation
+
+The peek animation is the same as the transition when composing an email in Apple's Mail app. The view controller presenting the new view controller "peeks" behind the presented view controller. Here is what it looks like:
+
+![sample](https://github.com/Chandlerdea/ViewControllerPresentation/blob/master/peek_transition.gif)
+
+#### Circle Animation
+
+The circle animation is a very specific animation, mostly for demo purporeses, which looks like this:
+
+![sample](https://github.com/Chandlerdea/ViewControllerPresentation/blob/master/circle_transition.gif)
+
 ## Tests
 I have application tests for the default and overlay animations. The application tests are like unit tests, execept you have access to view controllers, and objects in your application while it is running on the simulator. This is ideal for testing view controllers.
 
