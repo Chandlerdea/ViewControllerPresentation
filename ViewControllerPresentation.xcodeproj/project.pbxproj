@@ -12,6 +12,7 @@
 		360F91E02284FBF4005FC51F /* ViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F91DF2284FBF4005FC51F /* ViewControllerAnimator.swift */; };
 		360F91F422850651005FC51F /* CirclePresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F91F322850651005FC51F /* CirclePresentedViewController.swift */; };
 		360F91F62285095B005FC51F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 360F91F52285095B005FC51F /* README.md */; };
+		360F91F822851BE1005FC51F /* ViewControllerPeekPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F91F722851BE1005FC51F /* ViewControllerPeekPresentable.swift */; };
 		3646E49B1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E49A1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift */; };
 		3646E49D1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E49C1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift */; };
 		3646E4A11FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E4A01FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift */; };
@@ -83,6 +84,7 @@
 		360F91DF2284FBF4005FC51F /* ViewControllerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAnimator.swift; sourceTree = "<group>"; };
 		360F91F322850651005FC51F /* CirclePresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePresentedViewController.swift; sourceTree = "<group>"; };
 		360F91F52285095B005FC51F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		360F91F722851BE1005FC51F /* ViewControllerPeekPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPeekPresentable.swift; sourceTree = "<group>"; };
 		3646E49A1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayTransitionAnimationController.swift; sourceTree = "<group>"; };
 		3646E49C1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayTransitionPresentationController.swift; sourceTree = "<group>"; };
 		3646E4A01FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayPresentationTests.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				360F91DF2284FBF4005FC51F /* ViewControllerAnimator.swift */,
+				36FA97B0204B81D700963D0E /* Protocols */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -187,7 +190,6 @@
 			isa = PBXGroup;
 			children = (
 				360F91DE2284FBD2005FC51F /* Common */,
-				36FA97B0204B81D700963D0E /* Protocols */,
 				360F91D72284F98D005FC51F /* Circle Transition */,
 				36F60E4021DD6A4F00F15BB7 /* Modal Transition */,
 				36FA97A9204B7F4200963D0E /* Default Transition */,
@@ -265,6 +267,7 @@
 				36FA97AC204B7FC300963D0E /* ViewControllerPeekTransitionAnimationController.swift */,
 				36FA97B7204B8B9C00963D0E /* ViewControllerPeekTransitionPresentationController.swift */,
 				36FA97B3204B85C400963D0E /* ViewControllerPeekAnimator.swift */,
+				360F91F722851BE1005FC51F /* ViewControllerPeekPresentable.swift */,
 			);
 			path = "Peek Transition";
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				36F60E4B21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */,
 				360F91D92284F9DE005FC51F /* ViewControllerCircleTransitionAnimator.swift in Sources */,
 				368368E01FDA23AF007EF38E /* ViewControllerOverlayAnimator.swift in Sources */,
+				360F91F822851BE1005FC51F /* ViewControllerPeekPresentable.swift in Sources */,
 				36FA97AD204B7FC300963D0E /* ViewControllerPeekTransitionAnimationController.swift in Sources */,
 				360F91E02284FBF4005FC51F /* ViewControllerAnimator.swift in Sources */,
 				36FA97B4204B85C400963D0E /* ViewControllerPeekAnimator.swift in Sources */,

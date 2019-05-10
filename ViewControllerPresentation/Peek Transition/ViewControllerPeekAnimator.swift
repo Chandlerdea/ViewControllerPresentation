@@ -61,7 +61,10 @@ extension ViewControllerPeekAnimator: UIViewControllerAnimatedTransitioning {
             width: finalFrame.size.width,
             height: finalFrame.size.height
         )
-        
+        if case let peekPresentable as ViewControllerPeekPresentable = presentedViewController {
+            finalFrame.origin.y -= peekPresentable.backgroundHeight
+            finalFrame.size.height -= peekPresentable.backgroundHeight
+        }
         if self.isPresenting {
             presentedViewController.view.frame = bottomFrame
         } else {
@@ -97,10 +100,11 @@ extension ViewControllerPeekAnimator: UIViewControllerAnimatedTransitioning {
             withDuration: animationDuration,
             delay: 0,
             options: .curveEaseInOut,
-            animations: animations
-        ) { finished in
-            transitionContext.completeTransition(finished && !transitionContext.transitionWasCancelled)
-        }
+            animations: animations,
+            completion:  { finished in
+                transitionContext.completeTransition(finished && !transitionContext.transitionWasCancelled)
+            }
+        )
     }
     
 }

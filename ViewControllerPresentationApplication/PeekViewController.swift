@@ -9,7 +9,7 @@
 import UIKit
 import ViewControllerPresentation
 
-class PeekViewController: UIViewController, ViewControllerPresentable, ViewControllerModalInteractiveDismissable {
+class PeekViewController: UIViewController, ViewControllerPeekPresentable, ViewControllerModalInteractiveDismissable {
     
     var customBackgroundView: UIView? {
         return .none
@@ -34,15 +34,7 @@ class PeekViewController: UIViewController, ViewControllerPresentable, ViewContr
     override var preferredContentSize: CGSize {
         get {
             var result: CGSize = UIScreen.main.bounds.size
-            var isPhoneX: Bool = false
-            if #available(iOS 11.0, *) {
-                if let appDelegate: UIApplicationDelegate = UIApplication.shared.delegate,
-                    let mainWindow: UIWindow? = appDelegate.window,
-                    let insets: UIEdgeInsets = mainWindow?.safeAreaInsets {
-                    isPhoneX = insets.top > 0
-                }
-            }
-            result.height -= isPhoneX ? 52 : 40
+            result.height = self.preferredContentHeight
             return result
         }
         set {}
