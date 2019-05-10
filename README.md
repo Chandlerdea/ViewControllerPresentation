@@ -16,14 +16,8 @@ You can just drop `ViewControllerPresentation.xcodeproj` into your project and t
 
 
 ## Use
-### Demo
-This framework uses the default animation for presenting view controllers, but uses the view controller's `preferredContentSize` to display the presented view controller. Here's what the default animation looks like:
 
-![sample](https://github.com/Chandlerdea/ViewControllerPresentation/blob/master/overlay-transition.gif)
-
-### Code
-
-There are two animations that you get out of the box: default and overlay.
+There are fhour animations that you get out of the box: default, overlay, peek, and circle.
 
 #### Default Animation
 
@@ -31,20 +25,25 @@ The default animation is modal, from bottom to top. The presented view controlle
 
 #### Overlay Animation
 
-`ViewControllerOverlayPlacement` defines 3 different positions: top, center, and bottom. Both top and bottom have an associated value, which is used for padding. To use this animation, you use a `ViewControllerOverlayTransitionAnimationController`, which takes a `ViewControllerOverlayPlacement` in the initializer.
+`ViewControllerOverlayPlacement` defines 3 different positions: `top`, `center`, and `bottom`. Both `top` and `bottom` have an associated value, which is used for padding. To use this animation, you use a `ViewControllerOverlayTransitionAnimationController`, which takes a `ViewControllerOverlayPlacement` in the initializer.
 
 Using the framework is very easy. 
 ```swift
 let vc: UIViewController = .....
-vc.modalPresentationStyle = .custom
-vc.transitioningDelegate = self.animationController // We need a strong reference to this property 
-self.present(vc, animated: true, completion: nil)
+let overlay: ViewControllerOverlay = try! ViewControllerOverlay(entry: .top, exit: .bottom, position: .center)
+self.transitionController = ViewControllerOverlayTransitionAnimationController(overlay: overlay) // You need to keep a strong reference to this object
+vc.transitioningDelegate = self.transitionController
+self.present(vc, animated: true, completion: completion)
 ```
-And that's it!
+Here's what it looks like:
+
+![sample](https://github.com/Chandlerdea/ViewControllerPresentation/blob/master/overlay-transition.gif)
 
 #### Peek Animation
 
-The peek animation is the same as the transition when composing an email in Apple's Mail app. The view controller presenting the new view controller "peeks" behind the presented view controller. Here is what it looks like:
+The peek animation is the same as the transition when composing an email in Apple's Mail app. The view controller presenting the new view controller "peeks" behind the presented view controller.  To present a view controller this way, have you view controller conform to `ViewControllerPeekPresentable`. `ViewControllerPeekPresentable` has default implementations for its properties, but you can override them for custom values.
+
+Here is what it looks like:
 
 ![sample](https://github.com/Chandlerdea/ViewControllerPresentation/blob/master/peek-transition.gif)
 
