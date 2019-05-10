@@ -13,15 +13,15 @@ import ViewControllerPresentation
 class ViewControllerAnimatorTests: ViewControllerDefaultPresentationTests {
     
     func animatorPresents(with overlay: ViewControllerOverlay) {
-        let viewFrame: CGRect = CGRect(origin: .zero, size: CGSize(width: PresentedViewController.defaultWidth, height: PresentedViewController.defaultHeight))
+        let viewFrame: CGRect = CGRect(origin: .zero, size: PresentedViewController.defaultSize)
         
         let presentingAnimator: ViewControllerOverlayAnimator = ViewControllerOverlayAnimator(overlay: overlay, isPresenting: true)
         let presentingFrames: (initial: CGRect, final: CGRect) = presentingAnimator.frames(for: self.rootViewController.view, viewFrame: viewFrame)
         switch overlay.entry {
         case .top:
-            XCTAssertEqual(presentingFrames.initial.origin.y, -PresentedViewController.defaultHeight)
+            XCTAssertEqual(presentingFrames.initial.origin.y, -PresentedViewController.defaultSize.height)
         case .left:
-            XCTAssertEqual(presentingFrames.initial.origin.x, -PresentedViewController.defaultWidth)
+            XCTAssertEqual(presentingFrames.initial.origin.x, -PresentedViewController.defaultSize.width)
         case .bottom:
             XCTAssertEqual(presentingFrames.initial.origin.y, self.rootViewController.view.bounds.height)
         case .right:
@@ -32,9 +32,9 @@ class ViewControllerAnimatorTests: ViewControllerDefaultPresentationTests {
         let dismissingFrames: (initial: CGRect, final: CGRect) = dismissingAnimator.frames(for: self.rootViewController.view, viewFrame: viewFrame)
         switch overlay.exit {
         case .top:
-            XCTAssertEqual(dismissingFrames.final.origin.y, -PresentedViewController.defaultHeight)
+            XCTAssertEqual(dismissingFrames.final.origin.y, -PresentedViewController.defaultSize.height)
         case .left:
-            XCTAssertEqual(dismissingFrames.final.origin.x, -PresentedViewController.defaultWidth)
+            XCTAssertEqual(dismissingFrames.final.origin.x, -PresentedViewController.defaultSize.width)
         case .bottom:
             XCTAssertEqual(dismissingFrames.final.origin.y, self.rootViewController.view.bounds.height)
         case .right:

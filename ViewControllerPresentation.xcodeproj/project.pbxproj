@@ -29,9 +29,7 @@
 		36BB65311FD9E04C00D121A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BB652F1FD9E04C00D121A1 /* LaunchScreen.storyboard */; };
 		36BB653C1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB653B1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift */; };
 		36BB65451FD9E0B800D121A1 /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB65441FD9E0B800D121A1 /* PresentedViewController.swift */; };
-		36F60E4421DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4121DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift */; };
 		36F60E4521DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4121DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift */; };
-		36F60E4621DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4121DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift */; };
 		36F60E4721DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4221DD6A9100F15BB7 /* ViewControllerModalAnimator.swift */; };
 		36F60E4821DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4221DD6A9100F15BB7 /* ViewControllerModalAnimator.swift */; };
 		36F60E4921DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4221DD6A9100F15BB7 /* ViewControllerModalAnimator.swift */; };
@@ -337,10 +335,12 @@
 					};
 					36BB65231FD9E04B00D121A1 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					36BB65361FD9E04C00D121A1 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 36BB65231FD9E04B00D121A1;
 					};
@@ -422,7 +422,6 @@
 				36BB65291FD9E04C00D121A1 /* RootViewController.swift in Sources */,
 				36BB65271FD9E04C00D121A1 /* AppDelegate.swift in Sources */,
 				36F60E4A21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */,
-				36F60E4421DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift in Sources */,
 				36F60E4721DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */,
 				36BB65451FD9E0B800D121A1 /* PresentedViewController.swift in Sources */,
 				36FA97B6204B8A4100963D0E /* PeekViewController.swift in Sources */,
@@ -440,7 +439,6 @@
 				3646E4A11FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift in Sources */,
 				36F60E4C21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */,
 				3646E4A51FDA15040013AD55 /* ViewControllerDefaultPresentationTests.swift in Sources */,
-				36F60E4621DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift in Sources */,
 				3646E4A31FDA141F0013AD55 /* AsyncTesable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +651,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chandlerdea.ViewControllerPresentationApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -669,7 +667,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chandlerdea.ViewControllerPresentationApplication;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -684,7 +682,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chandlerdea.ViewControllerPresentationApplicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViewControllerPresentationApplication.app/ViewControllerPresentationApplication";
 			};
@@ -700,7 +698,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chandlerdea.ViewControllerPresentationApplicationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ViewControllerPresentationApplication.app/ViewControllerPresentationApplication";
 			};

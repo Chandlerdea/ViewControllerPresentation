@@ -34,7 +34,7 @@ class ViewControllerPresentationApplicationTests: ViewControllerDefaultPresentat
         self.expectation = self.makeExpectation()
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             if let presentedViewController: UIViewController = self?.rootViewController.presentedViewController {
-                let expectedSize: CGSize = CGSize(width: PresentedViewController.defaultWidth, height: PresentedViewController.defaultHeight)
+                let expectedSize: CGSize = PresentedViewController.defaultSize
                 XCTAssertEqual(expectedSize, presentedViewController.view.bounds.size)
             } else {
                 XCTFail()

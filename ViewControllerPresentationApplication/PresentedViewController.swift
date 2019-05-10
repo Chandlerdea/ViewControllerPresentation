@@ -10,10 +10,12 @@ import UIKit
 import ViewControllerPresentation
 
 class PresentedViewController: UIViewController, ViewControllerPresentable {
+    
+    static let defaultSize: CGSize = CGSize(width: 200, height: 200)
 
     public override var preferredContentSize: CGSize {
         get {
-            return CGSize(width: 200, height: 200)
+            return type(of: self).defaultSize
         }
         set {}
     }

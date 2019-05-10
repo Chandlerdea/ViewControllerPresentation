@@ -16,7 +16,7 @@ class ViewControllerOverlayPresentationTests: ViewControllerDefaultPresentationT
     
     func expectedOrigin(for position: ViewControllerOverlay.Position) -> CGPoint {
         let containerSize: CGSize = self.rootViewController.view.bounds.size
-        let contentSize: CGSize = CGSize(width: PresentedViewController.defaultWidth, height: PresentedViewController.defaultHeight)
+        let contentSize: CGSize = PresentedViewController.defaultSize
         switch position {
         case .top(let padding):
             return CGPoint(x: (containerSize.width - contentSize.width) * 0.5, y: padding)
@@ -35,7 +35,7 @@ class ViewControllerOverlayPresentationTests: ViewControllerDefaultPresentationT
         self.rootViewController.transitionController = ViewControllerOverlayTransitionAnimationController(overlay: overlay)
         self.rootViewController.presentNewViewController(animated: true) { [weak self] in
             if let presentedViewController: UIViewController = self?.rootViewController.presentedViewController {
-                let expectedSize: CGSize = CGSize(width: PresentedViewController.defaultWidth, height: PresentedViewController.defaultHeight)
+                let expectedSize: CGSize = PresentedViewController.defaultSize
                 let expectedFrame: CGRect = CGRect(origin: expectedOrigin, size: expectedSize)
                 XCTAssertEqual(expectedFrame, presentedViewController.view.frame)
                 self?.expectation.fulfill()
