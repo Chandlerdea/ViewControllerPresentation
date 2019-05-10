@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360F91D92284F9DE005FC51F /* ViewControllerCircleTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F91D82284F9DE005FC51F /* ViewControllerCircleTransitionAnimator.swift */; };
+		360F91DD2284FB1C005FC51F /* ViewControllerCircleTransitionAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F91DC2284FB1C005FC51F /* ViewControllerCircleTransitionAnimationController.swift */; };
+		360F91E02284FBF4005FC51F /* ViewControllerAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F91DF2284FBF4005FC51F /* ViewControllerAnimator.swift */; };
+		360F91F422850651005FC51F /* CirclePresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360F91F322850651005FC51F /* CirclePresentedViewController.swift */; };
+		360F91F62285095B005FC51F /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 360F91F52285095B005FC51F /* README.md */; };
 		3646E49B1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E49A1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift */; };
 		3646E49D1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E49C1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift */; };
 		3646E4A11FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3646E4A01FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift */; };
@@ -28,11 +33,9 @@
 		36BB652E1FD9E04C00D121A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36BB652D1FD9E04C00D121A1 /* Assets.xcassets */; };
 		36BB65311FD9E04C00D121A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36BB652F1FD9E04C00D121A1 /* LaunchScreen.storyboard */; };
 		36BB653C1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB653B1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift */; };
-		36BB65451FD9E0B800D121A1 /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB65441FD9E0B800D121A1 /* PresentedViewController.swift */; };
+		36BB65451FD9E0B800D121A1 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BB65441FD9E0B800D121A1 /* OverlayViewController.swift */; };
 		36F60E4521DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4121DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift */; };
-		36F60E4721DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4221DD6A9100F15BB7 /* ViewControllerModalAnimator.swift */; };
 		36F60E4821DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4221DD6A9100F15BB7 /* ViewControllerModalAnimator.swift */; };
-		36F60E4921DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4221DD6A9100F15BB7 /* ViewControllerModalAnimator.swift */; };
 		36F60E4A21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4321DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift */; };
 		36F60E4B21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4321DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift */; };
 		36F60E4C21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F60E4321DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift */; };
@@ -75,6 +78,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		360F91D82284F9DE005FC51F /* ViewControllerCircleTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCircleTransitionAnimator.swift; sourceTree = "<group>"; };
+		360F91DC2284FB1C005FC51F /* ViewControllerCircleTransitionAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCircleTransitionAnimationController.swift; sourceTree = "<group>"; };
+		360F91DF2284FBF4005FC51F /* ViewControllerAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerAnimator.swift; sourceTree = "<group>"; };
+		360F91F322850651005FC51F /* CirclePresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CirclePresentedViewController.swift; sourceTree = "<group>"; };
+		360F91F52285095B005FC51F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		3646E49A1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayTransitionAnimationController.swift; sourceTree = "<group>"; };
 		3646E49C1FDA0FCF0013AD55 /* ViewControllerOverlayTransitionPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayTransitionPresentationController.swift; sourceTree = "<group>"; };
 		3646E4A01FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerOverlayPresentationTests.swift; sourceTree = "<group>"; };
@@ -100,7 +108,7 @@
 		36BB65371FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ViewControllerPresentationApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		36BB653B1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresentationApplicationTests.swift; sourceTree = "<group>"; };
 		36BB653D1FD9E04C00D121A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		36BB65441FD9E0B800D121A1 /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
+		36BB65441FD9E0B800D121A1 /* OverlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 		36F60E4121DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerModalTransitionController.swift; sourceTree = "<group>"; };
 		36F60E4221DD6A9100F15BB7 /* ViewControllerModalAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerModalAnimator.swift; sourceTree = "<group>"; };
 		36F60E4321DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerModalInteractiveDismissalController.swift; sourceTree = "<group>"; };
@@ -137,9 +145,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360F91D72284F98D005FC51F /* Circle Transition */ = {
+			isa = PBXGroup;
+			children = (
+				360F91D82284F9DE005FC51F /* ViewControllerCircleTransitionAnimator.swift */,
+				360F91DC2284FB1C005FC51F /* ViewControllerCircleTransitionAnimationController.swift */,
+			);
+			path = "Circle Transition";
+			sourceTree = "<group>";
+		};
+		360F91DE2284FBD2005FC51F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				360F91DF2284FBF4005FC51F /* ViewControllerAnimator.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		36BB65071FD9DFDD00D121A1 = {
 			isa = PBXGroup;
 			children = (
+				360F91F52285095B005FC51F /* README.md */,
 				36BB65131FD9DFDD00D121A1 /* ViewControllerPresentation */,
 				36BB65251FD9E04B00D121A1 /* ViewControllerPresentationApplication */,
 				36BB653A1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests */,
@@ -160,7 +186,9 @@
 		36BB65131FD9DFDD00D121A1 /* ViewControllerPresentation */ = {
 			isa = PBXGroup;
 			children = (
+				360F91DE2284FBD2005FC51F /* Common */,
 				36FA97B0204B81D700963D0E /* Protocols */,
+				360F91D72284F98D005FC51F /* Circle Transition */,
 				36F60E4021DD6A4F00F15BB7 /* Modal Transition */,
 				36FA97A9204B7F4200963D0E /* Default Transition */,
 				36FA97AA204B7F5000963D0E /* Overlay Transition */,
@@ -176,7 +204,8 @@
 			children = (
 				36BB65261FD9E04C00D121A1 /* AppDelegate.swift */,
 				36FA97B5204B8A4100963D0E /* PeekViewController.swift */,
-				36BB65441FD9E0B800D121A1 /* PresentedViewController.swift */,
+				36BB65441FD9E0B800D121A1 /* OverlayViewController.swift */,
+				360F91F322850651005FC51F /* CirclePresentedViewController.swift */,
 				36BB65281FD9E04C00D121A1 /* RootViewController.swift */,
 				36BB652A1FD9E04C00D121A1 /* Main.storyboard */,
 				36BB652D1FD9E04C00D121A1 /* Assets.xcassets */,
@@ -380,6 +409,7 @@
 			files = (
 				36BB65311FD9E04C00D121A1 /* LaunchScreen.storyboard in Resources */,
 				36BB652E1FD9E04C00D121A1 /* Assets.xcassets in Resources */,
+				360F91F62285095B005FC51F /* README.md in Resources */,
 				36BB652C1FD9E04C00D121A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +430,7 @@
 			files = (
 				36F60E4821DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */,
 				365BF2A11FDA0F3C0083FBBB /* ViewControllerTransitionPresentationDelegate.swift in Sources */,
+				360F91DD2284FB1C005FC51F /* ViewControllerCircleTransitionAnimationController.swift in Sources */,
 				36FA97B8204B8B9C00963D0E /* ViewControllerPeekTransitionPresentationController.swift in Sources */,
 				36BB651F1FD9E01800D121A1 /* ViewControllerDefaultTransitionAnimationController.swift in Sources */,
 				36FA97B2204B81EE00963D0E /* ViewControllerPresentable.swift in Sources */,
@@ -408,8 +439,10 @@
 				3646E49B1FDA0FBC0013AD55 /* ViewControllerOverlayTransitionAnimationController.swift in Sources */,
 				36F60E4521DD6A9100F15BB7 /* ViewControllerModalTransitionController.swift in Sources */,
 				36F60E4B21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */,
+				360F91D92284F9DE005FC51F /* ViewControllerCircleTransitionAnimator.swift in Sources */,
 				368368E01FDA23AF007EF38E /* ViewControllerOverlayAnimator.swift in Sources */,
 				36FA97AD204B7FC300963D0E /* ViewControllerPeekTransitionAnimationController.swift in Sources */,
+				360F91E02284FBF4005FC51F /* ViewControllerAnimator.swift in Sources */,
 				36FA97B4204B85C400963D0E /* ViewControllerPeekAnimator.swift in Sources */,
 				368368DE1FDA20CE007EF38E /* ViewControllerOverlay.swift in Sources */,
 			);
@@ -422,9 +455,9 @@
 				36BB65291FD9E04C00D121A1 /* RootViewController.swift in Sources */,
 				36BB65271FD9E04C00D121A1 /* AppDelegate.swift in Sources */,
 				36F60E4A21DD6A9100F15BB7 /* ViewControllerModalInteractiveDismissalController.swift in Sources */,
-				36F60E4721DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */,
-				36BB65451FD9E0B800D121A1 /* PresentedViewController.swift in Sources */,
+				36BB65451FD9E0B800D121A1 /* OverlayViewController.swift in Sources */,
 				36FA97B6204B8A4100963D0E /* PeekViewController.swift in Sources */,
+				360F91F422850651005FC51F /* CirclePresentedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +466,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				36BB653C1FD9E04C00D121A1 /* ViewControllerPresentationApplicationTests.swift in Sources */,
-				36F60E4921DD6A9100F15BB7 /* ViewControllerModalAnimator.swift in Sources */,
 				368368E21FDA3311007EF38E /* ViewControllerAnimatorTests.swift in Sources */,
 				368368E41FDA4ADB007EF38E /* ViewControllerOverlayTests.swift in Sources */,
 				3646E4A11FDA135C0013AD55 /* ViewControllerOverlayPresentationTests.swift in Sources */,

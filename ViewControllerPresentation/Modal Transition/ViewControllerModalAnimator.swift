@@ -9,34 +9,28 @@
 import Foundation
 import UIKit
 
-final class ViewControllerModalAnimator: NSObject {
+final class ViewControllerModalAnimator: ViewControllerAnimator {
     
     // MARK: - Properties
     
-    private let isPresenting: Bool
-    internal let interactiveDismissalController: ViewControllerModalInteractiveDismissalController?
+    let interactiveDismissalController: ViewControllerModalInteractiveDismissalController?
     
     // MARK: - Init
-    
-    public convenience init(isPresenting: Bool) {
-        self.init(isPresenting: isPresenting, interactiveDismissalController: .none)
-    }
-    
-    public init(isPresenting: Bool, interactiveDismissalController: ViewControllerModalInteractiveDismissalController?) {
-        self.isPresenting = isPresenting
+
+    init(isPresenting: Bool, interactiveDismissalController: ViewControllerModalInteractiveDismissalController? = nil) {
         self.interactiveDismissalController = interactiveDismissalController
-        super.init()
+        super.init(isPresenting: isPresenting)
     }
 }
 
 // MARK: - UIViewControllerAnimatedTransitioning
 extension ViewControllerModalAnimator: UIViewControllerAnimatedTransitioning {
     
-    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.3
     }
     
-    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let viewController: UIViewController
         let containerView: UIView = transitionContext.containerView
         if self.isPresenting {
@@ -63,11 +57,16 @@ extension ViewControllerModalAnimator: UIViewControllerAnimatedTransitioning {
                 height: finalFrame.size.height
             )
         }
-        UIView.animate(withDuration: animationDuration, delay: 0, options: .curveEaseInOut, animations: {
-            viewController.view.frame = finalFrame
-        }) { finished in
-            transitionContext.completeTransition(finished && !transitionContext.transitionWasCancelled)
-        }
+        UIView.animate(
+            withDuration: animationDuration,
+            delay: 0,
+            options: .curveEaseInOut,
+            animations: {
+                viewController.view.frame = finalFrame
+            }, completion:  { finished in
+                transitionContext.completeTransition(finished && !transitionContext.transitionWasCancelled)
+            }
+        )
     }
 }
 // MARK: - UIViewControllerInteractiveTransitioning

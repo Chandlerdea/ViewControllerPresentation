@@ -7,24 +7,55 @@
 //
 
 import UIKit
+import ViewControllerPresentation
 
-class PeekViewController: UIViewController {
+class PeekViewController: UIViewController, ViewControllerPresentable, ViewControllerModalInteractiveDismissable {
     
+    var customBackgroundView: UIView? {
+        return .none
+    }
+    
+    var backgroundColor: UIColor? {
+        return UIColor.black.withAlphaComponent(0.2)
+    }
+    
+    var interactiveTransitioning: ViewControllerModalInteractiveDismissalController?
+    
+    func swipeDidBegin() {
 
-    public override var preferredContentSize: CGSize {
+    }
+    
+    func swipeDidEnd() {
+        if self.interactiveTransitioning?.shouldCompleteTransition == true {
+            self.dismiss(animated: true, completion: .none)
+        }
+    }
+
+    override var preferredContentSize: CGSize {
         get {
-            return CGSize(
-                width: UIScreen.main.bounds.width,
-                height: UIScreen.main.bounds.height - 60
-            )
+            var result: CGSize = UIScreen.main.bounds.size
+            var isPhoneX: Bool = false
+            if #available(iOS 11.0, *) {
+                if let appDelegate: UIApplicationDelegate = UIApplication.shared.delegate,
+                    let mainWindow: UIWindow? = appDelegate.window,
+                    let insets: UIEdgeInsets = mainWindow?.safeAreaInsets {
+                    isPhoneX = insets.top > 0
+                }
+            }
+            result.height -= isPhoneX ? 52 : 40
+            return result
         }
         set {}
     }
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .blue
-        
+        self.interactiveTransitioning = ViewControllerModalInteractiveDismissalController(viewController: self)
+        self.addCloseButton()
+    }
+    
+    private func addCloseButton() {
         let closeButton: UIButton = UIButton(type: .custom)
         closeButton.setTitle("Close", for: .normal)
         closeButton.setTitleColor(UIColor.white, for: .normal)

@@ -10,45 +10,19 @@ import UIKit
 import ViewControllerPresentation
 
 class RootViewController: UIViewController {
+    
+    @IBOutlet private weak var circleButton: UIButton!
 
     var transitionController: ViewControllerDefaultTransitionAnimationController? {
         didSet {
             self.transitionController?.tapDelegate = self
         }
     }
+
+    private var peekTransitionController: UIViewControllerTransitioningDelegate = ViewControllerPeekTransitionAnimationController()
+    private lazy var circleTransitionController: UIViewControllerTransitioningDelegate = ViewControllerCircleTransitionAnimationController(sourceFrame: self.circleButton.frame)
     
-    var peekTransitionController: UIViewControllerTransitioningDelegate = ViewControllerPeekTransitionAnimationController()
-    
-    override public func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = .white
-        let recognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap(_:)))
-        self.view.addGestureRecognizer(recognizer)
-    }
-    
-    public func presentNewViewController(animated: Bool, completion: (() -> Void)? = nil) {
-        let vc = PresentedViewController()
-        vc.modalPresentationStyle = .custom
-        vc.transitioningDelegate = self.transitionController
-        self.present(vc, animated: animated, completion: completion)
-    }
-    
-    public func peekNewViewController(animated: Bool, completion: (() -> ())? = nil) {
-        let vc = PeekViewController()
-        vc.modalPresentationStyle = .custom
-        vc.transitioningDelegate = self.peekTransitionController
-        self.present(vc, animated: animated, completion: completion)
-    }
-    
-    @objc func didTap(_ sender: UITapGestureRecognizer) {
-        self.peekNewViewController(animated: true)
-    }
-    
-    public func didTapContainer() {
-        self.presentedViewController?.dismiss(animated: true, completion: .none)
-    }
-    
-    private func presentOverlay(with entry: ViewControllerOverlay.Edge) {
+    private func presentOverlay(with entry: ViewControllerOverlay.Edge, completion: (() -> ())? = nil) {
         let exit: ViewControllerOverlay.Edge
         let position: ViewControllerOverlay.Position
         switch entry {
@@ -67,7 +41,39 @@ class RootViewController: UIViewController {
         }
         let overlay: ViewControllerOverlay = try! ViewControllerOverlay(entry: entry, exit: exit, position: position)
         self.transitionController = ViewControllerOverlayTransitionAnimationController(overlay: overlay)
-        self.presentNewViewController(animated: true)
+        let vc = OverlayViewController()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = self.transitionController
+        self.present(vc, animated: true, completion: completion)
+    }
+    
+    override public func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .white
+        let recognizer: UIGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTap))
+        self.view.addGestureRecognizer(recognizer)
+    }
+    
+    public func peekNewViewController(animated: Bool, completion: (() -> ())? = nil) {
+        let vc = PeekViewController()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = self.peekTransitionController
+        self.present(vc, animated: animated, completion: completion)
+    }
+    
+    public func circleNewViewController(animated: Bool, completion: (() -> ())? = nil) {
+        let vc = CirclePresentedViewController()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = self.circleTransitionController
+        self.present(vc, animated: animated, completion: completion)
+    }
+    
+    @objc func didTap(_ sender: UITapGestureRecognizer) {
+        self.peekNewViewController(animated: true)
+    }
+    
+    public func didTapContainer() {
+        self.presentedViewController?.dismiss(animated: true, completion: .none)
     }
     
     @IBAction func topButtonSelected(_ sender: UIButton) {
@@ -84,6 +90,10 @@ class RootViewController: UIViewController {
     
     @IBAction func rightButtonSelected(_ sender: UIButton) {
         self.presentOverlay(with: .right)
+    }
+    
+    @IBAction func circleButtonSelected(_ sender: UIButton) {
+        self.circleNewViewController(animated: true)
     }
 
 }

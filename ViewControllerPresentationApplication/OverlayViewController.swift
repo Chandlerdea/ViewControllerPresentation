@@ -1,5 +1,5 @@
 //
-//  PresentedViewController.swift
+//  OverlayViewController.swift
 //  ViewControllerPresentationApplication
 //
 //  Created by Chandler De Angelis on 12/7/17.
@@ -9,7 +9,7 @@
 import UIKit
 import ViewControllerPresentation
 
-class PresentedViewController: UIViewController, ViewControllerPresentable {
+class OverlayViewController: UIViewController, ViewControllerPresentable {
     
     static let defaultSize: CGSize = CGSize(width: 200, height: 200)
 
