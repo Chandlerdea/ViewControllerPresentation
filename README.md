@@ -19,7 +19,7 @@ You can just drop `ViewControllerPresentation.xcodeproj` into your project and t
 ### Demo
 This framework uses the default animation for presenting view controllers, but uses the view controller's `preferredContentSize` to display the presented view controller. Here's what the default animation looks like:
 
-![sample](https://github.com/Chandlerdea/ViewControllerPresentation/blob/master/viewcontrollerpresentation_demo.gif)
+![sample](https://github.com/Chandlerdea/ViewControllerPresentation/blob/master/overlay-transition.gif)
 
 ### Code
 
