@@ -21,8 +21,9 @@ public final class ViewControllerModalInteractiveDismissalController: UIPercentD
     public static let percentThreshold: CGFloat = 0.3 // The user needs to swipe down 30% to trigger a dismissal
     
     public private(set) var interactionInProgress = false
-    
+
     public private(set) var shouldCompleteTransition = false
+
     private weak var viewController: (UIViewController & ViewControllerModalInteractiveDismissable)!
     
     public init(viewController: UIViewController & ViewControllerModalInteractiveDismissable) {
@@ -52,8 +53,8 @@ public final class ViewControllerModalInteractiveDismissalController: UIPercentD
         
         switch recognizer.state {
         case .began:
-            viewController.swipeDidBegin()
             self.interactionInProgress = true
+            viewController.swipeDidBegin()
             viewController.dismiss(animated: true, completion: .none)
         case .changed:
             self.shouldCompleteTransition = progress > percentThreshold
@@ -62,8 +63,8 @@ public final class ViewControllerModalInteractiveDismissalController: UIPercentD
             self.interactionInProgress = false
             self.cancel()
         case .ended:
-            viewController.swipeDidEnd()
             self.interactionInProgress = false
+            viewController.swipeDidEnd()
             self.shouldCompleteTransition
                 ? self.finish()
                 : self.cancel()
